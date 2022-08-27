@@ -52,8 +52,8 @@ public class DashboardController
     }
 
     /**
-     * <p>Displays the Customers view</p>
-     * <p>Passes the logged in user to the Customers controller</p>
+     * <p>Displays the Clients view</p>
+     * <p>Passes the logged in user to the Clients controller</p>
      * @param event
      * @throws SQLException
      * @throws IOException
@@ -164,8 +164,8 @@ public class DashboardController
     }
 
     /**
-     * <p>Displays the Reports view</p>
-     * <p>Passes the logged in user to the Reports controller</p>
+     * <p>Displays the Volunteers view</p>
+     * <p>Passes the logged in user to the Volunteers controller</p>
      * @param event
      * @throws SQLException
      * @throws IOException
@@ -190,6 +190,12 @@ public class DashboardController
 
     }
 
+    /**
+     * Displays the User view
+     * @param event
+     * @throws SQLException
+     * @throws IOException
+     */
     public void onUsersButtonClick(ActionEvent event) throws SQLException, IOException {
         FXMLLoader loader = new FXMLLoader(SchedulingApplication.class.getResource("users-view.fxml"));
         Parent tableViewParent = loader.load();

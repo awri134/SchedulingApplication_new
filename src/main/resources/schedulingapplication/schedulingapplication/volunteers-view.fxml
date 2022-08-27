@@ -42,7 +42,6 @@
                 <Button fx:id="btnIntro" mnemonicParsing="false" onAction="#showIntro" text="Volunteer Introduction" />
             </buttons>
         </ButtonBar>
-        <Label fx:id="lblTest" layoutX="29.0" layoutY="267.0" text="Label" />
         <GridPane fx:id="paneEdit" layoutX="99.0" layoutY="313.0" minWidth="-Infinity" prefHeight="210.0" prefWidth="404.0">
             <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="171.33331298828125" minWidth="10.0" prefWidth="109.99996948242188" />

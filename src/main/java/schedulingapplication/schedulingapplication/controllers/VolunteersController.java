@@ -69,6 +69,7 @@ public class VolunteersController implements Initializable {
         emailCol.setCellValueFactory(new PropertyValueFactory<>("email"));
         skillCol.setCellValueFactory(new PropertyValueFactory<>("skill"));
         tvVol.setItems(volList);
+        paneEdit.setVisible(false);
     }
 
 

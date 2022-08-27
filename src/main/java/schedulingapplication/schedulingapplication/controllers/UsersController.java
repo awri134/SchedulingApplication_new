@@ -25,6 +25,9 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
+/**
+ * Controller class for the Users view
+ */
 public class UsersController implements Initializable {
 
     @FXML
@@ -61,6 +64,11 @@ public class UsersController implements Initializable {
     }
 
 
+    /**
+     * <p>Displays the editing fields and populates them with data from the selected user.</p>
+     * <p>This will only work if the logged in user is "admin"</p>
+     * @param actionEvent
+     */
     public void onEditClick(ActionEvent actionEvent)
     {
         if(user.getName() == "admin")
@@ -97,8 +105,8 @@ public class UsersController implements Initializable {
     }
 
     /**
-     * Clears the Client edit/add fields
-     * Displays the fields for creating a Client
+     * Clears the User edit/add fields
+     * Displays the fields for creating a User
      * @param event
      * @throws SQLException
      */
@@ -113,7 +121,7 @@ public class UsersController implements Initializable {
 
 
     /**
-     * Updates and saves the selected Client using the data from the input fields
+     * Updates and saves the selected User using the data from the input fields
      * @throws SQLException
      */
     public void userSaveButtonClick() throws SQLException
@@ -153,7 +161,7 @@ public class UsersController implements Initializable {
     }
 
     /**
-     * Creates and saves a new Client using the data from the input fields
+     * Creates and saves a new User using the data from the input fields
      * @throws SQLException
      */
     public void userSaveNewButtonClick() throws SQLException {
@@ -196,7 +204,7 @@ public class UsersController implements Initializable {
     }
 
     /**
-     * Deletes the selected Client
+     * Deletes the selected User
      * @param actionEvent
      * @throws SQLException
      */
@@ -219,7 +227,7 @@ public class UsersController implements Initializable {
     }
 
     /**
-     * Gets the Clients from the database and fills the TableView with the updated data
+     * Gets the Users from the database and fills the TableView with the updated data
      * @throws SQLException
      */
     private void refreshTableView() throws SQLException {
@@ -261,11 +269,7 @@ public class UsersController implements Initializable {
 
     @FXML
     public void searchUsers() throws SQLException {
-        System.out.println("SEARCH BUTTON CLICKED!");
         String query = txtQuery.getText();
-        //ObservableList<Volunteer> results = VolunteersHelper.searchVolunteers(query);
-
-
         tvUsers.getItems().clear();
         userList = UserHelper.searchUsers(query);
         idCol.setCellValueFactory(new PropertyValueFactory<>("id"));
