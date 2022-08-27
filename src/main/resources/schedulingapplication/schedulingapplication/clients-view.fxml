@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Font?>
+<VBox fx:id="vbCont" prefHeight="439.0" prefWidth="683.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="schedulingapplication.schedulingapplication.controllers.ClientsController">
+    <children>
+        <ButtonBar fx:id="btnbarBack" prefHeight="40.0" prefWidth="200.0">
+            <buttons>
+                <Button fx:id="btnMain" mnemonicParsing="false" onAction="#backToMain" text="Back to Main" />
+            </buttons>
+        </ButtonBar>
+        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="35.0" prefWidth="678.0" text="Clients" textAlignment="CENTER">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Label>
+        <TableView fx:id="tvCust" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="193.0" prefWidth="683.0">
+            <columns>
+                <TableColumn fx:id="idCol" editable="false" prefWidth="75.0" text="ID" />
+                <TableColumn fx:id="nameCol" prefWidth="75.0" text="Name" />
+                <TableColumn fx:id="addCol" prefWidth="75.0" text="Address" />
+                <TableColumn fx:id="zipCol" prefWidth="75.0" text="Zip Code" />
+                <TableColumn fx:id="phoneCol" prefWidth="75.0" text="Phone" />
+                <TableColumn fx:id="divNameCol" prefWidth="75.0" text="State / Province" />
+                <TableColumn fx:id="countryCol" prefWidth="75.0" text="Country" />
+                <TableColumn fx:id="updatedByCol" prefWidth="75.0" text="Last Updated By" />
+                <TableColumn fx:id="updatedDateCol" prefWidth="75.0" text="Last Updated On" />
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+            </columnResizePolicy>
+        </TableView>
+        <ButtonBar fx:id="btnbarModify" prefHeight="40.0" prefWidth="525.0">
+            <buttons>
+                <Button fx:id="btnAddClient" mnemonicParsing="false" onAction="#onAddClientClick" text="Add Client" />
+                <Button fx:id="btnEditCust" mnemonicParsing="false" onAction="#onEditClick" text="Edit Client" />
+                <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#onDeleteClick" text="Delete Client" />
+            </buttons>
+        </ButtonBar>
+        <GridPane fx:id="paneEditClient" minWidth="-Infinity" prefHeight="210.0" prefWidth="404.0" visible="false">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="171.33331298828125" minWidth="10.0" prefWidth="109.99996948242188" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="242.00003051757812" minWidth="10.0" prefWidth="242.00003051757812" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <TextField fx:id="txtCustName" prefHeight="25.0" prefWidth="166.0" promptText="Name" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Label text="Name" GridPane.rowIndex="1" />
+                <Label text="Address" GridPane.rowIndex="2" />
+                <Label text="Postal Code" GridPane.rowIndex="3" />
+                <Label text="Phone Number" GridPane.rowIndex="6" />
+                <TextField fx:id="txtCustAddress" promptText="Address" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <TextField fx:id="txtCustZip" promptText="Postal Code" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <TextField fx:id="txtCustPhone" promptText="Phone Number" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                <Label text="Name" GridPane.rowIndex="1" />
+                <Label fx:id="lblCustId" text="Client ID" />
+                <TextField fx:id="txtCustID" disable="true" editable="false" prefHeight="25.0" prefWidth="166.0" promptText="ID is Auto Generated" GridPane.columnIndex="1" />
+                <ComboBox fx:id="cbCountry" onAction="#onCountrySelected" prefWidth="150.0" promptText="Country" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                <Label fx:id="lblCountry" text="Country" GridPane.rowIndex="4" />
+                <ComboBox fx:id="cbDivisions" prefWidth="150.0" promptText="State / Province" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                <Label fx:id="lblDivision" text="State / Province" GridPane.rowIndex="5" />
+                <ButtonBar maxWidth="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="320.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="7">
+                    <buttons>
+                        <Button fx:id="btnCancel" mnemonicParsing="false" onAction="#onCancelClick" text="Cancel" />
+                        <Button fx:id="btnSaveNewCust" mnemonicParsing="false" onAction="#custSaveNewButtonClick" text="Save" />
+                        <Button fx:id="btnSaveCust" mnemonicParsing="false" onAction="#custSaveButtonClick" text="Save" />
+                    </buttons>
+                </ButtonBar>
+            </children>
+        </GridPane>
+    </children>
+</VBox>
+

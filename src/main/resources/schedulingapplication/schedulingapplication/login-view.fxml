@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Button?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.TextField?>
+<AnchorPane minHeight="750.0" minWidth="1000.0" prefHeight="750.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="schedulingapplication.schedulingapplication.controllers.LoginController">
+    <children>
+        <Label fx:id="lblWelcome" alignment="CENTER" contentDisplay="CENTER" layoutX="4.0" layoutY="14.0" prefHeight="35.0" prefWidth="1000.0" text="Welcome">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+        </Label>
+        <TextField fx:id="txtUsername" layoutX="461.0" layoutY="165.0" />
+        <Label fx:id="lblUsername" layoutX="329.0" layoutY="169.0" text="Username" />
+        <Label fx:id="lblPassword" layoutX="334.0" layoutY="213.0" text="Password" />
+        <TextField fx:id="txtPassword" layoutX="459.0" layoutY="212.0" />
+        <Button fx:id="btnLogin" layoutX="519.0" layoutY="254.0" mnemonicParsing="false" onAction="#onLoginButtonClick" text="Login" />
+        <Label fx:id="lblTimeandZone" alignment="CENTER" contentDisplay="CENTER" layoutY="49.0" prefHeight="25.0" prefWidth="1000.0" textAlignment="CENTER" />
+    </children>
+</AnchorPane>

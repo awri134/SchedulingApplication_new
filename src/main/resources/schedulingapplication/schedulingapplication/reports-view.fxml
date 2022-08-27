@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="schedulingapplication.schedulingapplication.controllers.ReportsController">
+    <children>
+        <Label alignment="CENTER" contentDisplay="CENTER" layoutY="40.0" text="Reports" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Label>
+        <ButtonBar layoutX="25.0" layoutY="79.0" prefHeight="40.0" prefWidth="200.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0">
+            <buttons>
+                <Button fx:id="btnTotals" mnemonicParsing="false" onAction="#onTotalsClicked" text="Totals" />
+                <Button mnemonicParsing="false" onAction="#onSchedulesClicked" text="Schedules" />
+            </buttons>
+        </ButtonBar>
+        <Label fx:id="lblReportTitle" alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="110.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+        <HBox fx:id="hbTotals" alignment="CENTER" layoutX="113.0" layoutY="144.0" prefHeight="255.0" prefWidth="550.0" visible="false" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0">
+            <children>
+                <VBox prefHeight="200.0" prefWidth="100.0">
+                    <children>
+                        <Text fx:id="txtReport" strokeType="OUTSIDE" strokeWidth="0.0" text="Totals By Type" textAlignment="CENTER" wrappingWidth="201.0">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Text>
+                        <Text fx:id="txtTypeTotals" strokeType="OUTSIDE" strokeWidth="0.0" text="text" wrappingWidth="201.0">
+                            <VBox.margin>
+                                <Insets left="15.0" right="15.0" />
+                            </VBox.margin>
+                        </Text>
+                    </children>
+                </VBox>
+                <VBox prefHeight="200.0" prefWidth="100.0">
+                    <children>
+                        <Text fx:id="txtReport1" strokeType="OUTSIDE" strokeWidth="0.0" text="Totals By Month" textAlignment="CENTER" wrappingWidth="201.0">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Text>
+                        <Text fx:id="txtMonthTotals" strokeType="OUTSIDE" strokeWidth="0.0" text="text" wrappingWidth="201.0">
+                            <VBox.margin>
+                                <Insets left="15.0" right="15.0" />
+                            </VBox.margin>
+                        </Text>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+        <VBox fx:id="v" alignment="CENTER" layoutX="76.0" layoutY="137.0" maxHeight="-Infinity" prefHeight="329.0" prefWidth="600.0" visible="false" AnchorPane.bottomAnchor="-17.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="137.0" />
+        <Pane fx:id="paneCustReport" layoutX="25.0" layoutY="144.0" prefHeight="200.0" prefWidth="550.0" visible="false">
+            <children>
+                <Label layoutX="1.0" layoutY="14.0" prefHeight="17.0" prefWidth="550.0" text="Client Appointments with average times" />
+                <Text fx:id="txtCustReport" layoutX="9.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="533.13671875" />
+            </children>
+        </Pane>
+        <ButtonBar prefHeight="40.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <buttons>
+                <Button fx:id="btnMain" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#backToMain" text="Back to Main" textAlignment="CENTER" />
+            </buttons>
+        </ButtonBar>
+    </children>
+    <padding>
+        <Insets bottom="50.0" />
+    </padding>
+</AnchorPane>

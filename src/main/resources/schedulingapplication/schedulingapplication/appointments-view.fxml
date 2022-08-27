@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="vbMain" prefHeight="898.0" prefWidth="1115.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="schedulingapplication.schedulingapplication.controllers.AppointmentsController">
+    <children>
+        <ButtonBar prefHeight="40.0" prefWidth="200.0">
+            <buttons>
+                <TextField fx:id="txtQuery" promptText="Search" />
+                <Button fx:id="btnSearch" mnemonicParsing="false" onAction="#searchAppointments" text="Search" />
+                <Button fx:id="btnMain" mnemonicParsing="false" onAction="#backToMain" text="Back to Main" />
+            </buttons>
+        </ButtonBar>
+        <Label fx:id="lblAppointments" alignment="CENTER" contentDisplay="CENTER" prefHeight="35.0" prefWidth="1107.0" text="Appointments" textAlignment="CENTER">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Label>
+        <TableView fx:id="tvAppointments" prefHeight="236.0" prefWidth="1107.0">
+            <columns>
+                <TableColumn fx:id="colId" prefWidth="75.0" text="ID" />
+                <TableColumn fx:id="colTitle" prefWidth="75.0" text="Title" />
+                <TableColumn fx:id="colDesc" prefWidth="75.0" text="Description" />
+                <TableColumn fx:id="colLoc" prefWidth="75.0" text="Location" />
+                <TableColumn fx:id="colType" prefWidth="75.0" text="Type" />
+                <TableColumn fx:id="colStart" prefWidth="75.0" text="Start" />
+                <TableColumn fx:id="colEnd" prefWidth="75.0" text="End" />
+                <TableColumn fx:id="colCust" prefWidth="75.0" text="Client" />
+                <TableColumn fx:id="colUser" prefWidth="75.0" text="User" />
+                <TableColumn fx:id="colCon" prefWidth="75.0" text="Volunteer" />
+            </columns>
+        </TableView>
+        <ButtonBar prefHeight="40.0" prefWidth="1095.0">
+            <buttons>
+                <Button fx:id="btnEditAppointment" mnemonicParsing="false" onAction="#onEditClick" text="Edit Appointment" />
+                <Button fx:id="btnCreateAppointment" mnemonicParsing="false" onAction="#onCreateClick" text="Create Appointment" />
+                <Button fx:id="btnDeleteAppointment" mnemonicParsing="false" onAction="#onDeleteClick" text="Delete Appointment" />
+                <RadioButton fx:id="rbWeek" mnemonicParsing="false" onAction="#filterAppointments" text="View This Week" />
+                <RadioButton fx:id="rbMonth" mnemonicParsing="false" onAction="#filterAppointments" text="View This Month" />
+                <RadioButton fx:id="rbAll" mnemonicParsing="false" onAction="#filterAppointments" selected="true" text="View All" />
+            </buttons>
+        </ButtonBar>
+        <GridPane fx:id="gpEditAppointment" minWidth="-Infinity" prefHeight="491.0" prefWidth="785.0" visible="false">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="538.0" minWidth="10.0" prefWidth="185.6666717529297" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="929.3333282470703" minWidth="0.0" prefWidth="929.3333282470703" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <TextField fx:id="txtApptTitle" prefHeight="25.0" prefWidth="166.0" promptText="Name" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Label text="Description" GridPane.rowIndex="2" />
+                <Label text="Location" GridPane.rowIndex="3" />
+                <Label text="End Time" GridPane.rowIndex="8" />
+                <TextField fx:id="txtApptDesc" promptText="Description" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <TextField fx:id="txtApptLoc" promptText="Location" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <Label text="Title" GridPane.rowIndex="1" />
+                <Label fx:id="lblCustId" text="Appointment ID" />
+                <TextField fx:id="txtApptID" disable="true" editable="false" prefHeight="25.0" prefWidth="166.0" promptText="ID is Auto Generated" GridPane.columnIndex="1" />
+                <Label fx:id="lblCountry" text="Type" GridPane.rowIndex="4" />
+                <Label fx:id="lblDivision" text="Start Date/Time" GridPane.rowIndex="5" />
+                <Label text="Client" GridPane.rowIndex="9" />
+                <Label text="User" GridPane.rowIndex="10" />
+                <Label text="Volunteer" GridPane.rowIndex="11" />
+                <ComboBox fx:id="cbVolunteerName" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                <ComboBox fx:id="cbClientName" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                <TextField fx:id="txtApptType" promptText="Type" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                <DatePicker fx:id="dpApptStart" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                <Label text="End Date" GridPane.rowIndex="7" />
+                <Label text="Start Time" GridPane.rowIndex="6" />
+                <DatePicker fx:id="dpApptEnd" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                <HBox prefHeight="34.0" prefWidth="156.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                    <children>
+                        <VBox prefHeight="40.0" prefWidth="100.0">
+                            <children>
+                                <Label text="Hour" />
+                                <Spinner fx:id="spnStartHour" editable="true" />
+                            </children>
+                        </VBox>
+                        <VBox prefHeight="42.0" prefWidth="100.0">
+                            <children>
+                                <Label text="Minute" />
+                                <Spinner fx:id="spnStartMinute" editable="true" prefHeight="24.0" prefWidth="133.0" />
+                            </children>
+                        </VBox>
+                        <VBox alignment="TOP_CENTER" prefHeight="42.0" prefWidth="132.0">
+                            <children>
+                                <Label text="AM or PM" />
+                                <HBox alignment="BOTTOM_RIGHT" prefHeight="25.0" prefWidth="115.0">
+                                    <children>
+                                        <RadioButton fx:id="rbStartAm" mnemonicParsing="false" prefHeight="18.0" prefWidth="57.0" text="AM" />
+                                        <RadioButton fx:id="rbStartPm" mnemonicParsing="false" prefHeight="11.0" prefWidth="57.0" text="PM" />
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+                <HBox prefHeight="34.0" prefWidth="156.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                    <children>
+                        <VBox prefHeight="40.0" prefWidth="100.0">
+                            <children>
+                                <Label text="Hour" />
+                                <Spinner fx:id="spnEndHour" editable="true" />
+                            </children>
+                        </VBox>
+                        <VBox prefHeight="42.0" prefWidth="100.0">
+                            <children>
+                                <Label text="Minute" />
+                                <Spinner fx:id="spnEndMinute" editable="true" prefHeight="24.0" prefWidth="133.0" />
+                            </children>
+                        </VBox>
+                        <VBox alignment="TOP_CENTER" prefHeight="42.0" prefWidth="132.0">
+                            <children>
+                                <Label text="AM or PM" />
+                                <HBox alignment="BOTTOM_RIGHT" prefHeight="25.0" prefWidth="115.0">
+                                    <children>
+                                        <RadioButton fx:id="rbEndAm" mnemonicParsing="false" prefHeight="18.0" prefWidth="57.0" text="AM" />
+                                        <RadioButton fx:id="rbEndPm" mnemonicParsing="false" prefHeight="11.0" prefWidth="57.0" text="PM" />
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+                <ComboBox fx:id="cbUserName" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                <ButtonBar maxWidth="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="299.0" GridPane.columnSpan="2147483647" GridPane.halignment="LEFT" GridPane.rowIndex="12" GridPane.valignment="CENTER">
+                    <buttons>
+                        <Button fx:id="btnCancel" mnemonicParsing="false" onAction="#onCancelClick" text="Cancel" />
+                        <Button fx:id="btnSaveNewApp" mnemonicParsing="false" onAction="#apptSaveNewButtonClick" text="Save" />
+                        <Button fx:id="btnSaveApp" mnemonicParsing="false" onAction="#apptSaveButtonClick" text="Save" />
+                    </buttons>
+                </ButtonBar>
+            </children>
+        </GridPane>
+    </children>
+</VBox>
