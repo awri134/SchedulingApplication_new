@@ -31,8 +31,6 @@ public abstract class JDBC
         {
             Class.forName(sqlitedriver);
             //connection = DriverManager.getConnection(jdbcUrl, userName, password);
-            System.out.print("sqlite URL - ");
-            System.out.println(sqlitejdbcUrl);
             connection = DriverManager.getConnection(sqlitejdbcUrl);
             connection.setAutoCommit(true);
         }

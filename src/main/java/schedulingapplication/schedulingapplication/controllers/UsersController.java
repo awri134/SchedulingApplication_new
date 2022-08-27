@@ -88,7 +88,7 @@ public class UsersController implements Initializable {
         }
         else
         {
-            UserHelper.notAdminAlert();
+            UserHelper.notAdminAlert(user);
         }
     }
 
@@ -148,7 +148,7 @@ public class UsersController implements Initializable {
         }
         else
         {
-            UserHelper.notAdminAlert();
+            UserHelper.notAdminAlert(user);
         }
     }
 
@@ -191,7 +191,7 @@ public class UsersController implements Initializable {
         }
         else
         {
-            UserHelper.notAdminAlert();
+            UserHelper.notAdminAlert(user);
         }
     }
 
@@ -214,7 +214,7 @@ public class UsersController implements Initializable {
         }
         else
         {
-            UserHelper.notAdminAlert();
+            UserHelper.notAdminAlert(user);
         }
     }
 

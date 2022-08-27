@@ -51,7 +51,7 @@ public abstract class UserHelper
         }
         else
         {
-            notAdminAlert();
+            notAdminAlert(currentUser);
         }
 
     }
@@ -74,7 +74,7 @@ public abstract class UserHelper
         }
         else
         {
-            notAdminAlert();
+            notAdminAlert(currentUser);
         }
     }
 
@@ -100,7 +100,7 @@ public abstract class UserHelper
         }
         else
         {
-            notAdminAlert();
+            notAdminAlert(currentUser);
         }
     }
 
@@ -127,14 +127,16 @@ public abstract class UserHelper
         return found;
     }
 
-    public static void notAdminAlert()
+    public static void notAdminAlert(User u)
     {
         try {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setHeaderText("Permissions Error");
-            alert.setTitle("Permissions Error");
-            alert.setContentText("This action requires elevated permissions.");
-            alert.show();
+            if(u.getName() != "TestUser") {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setHeaderText("Permissions Error");
+                alert.setTitle("Permissions Error");
+                alert.setContentText("This action requires elevated permissions.");
+                alert.show();
+            }
         }
         catch (Exception e)
         {

@@ -369,8 +369,7 @@ public abstract class AppointmentsHelper
         sb.append("' BETWEEN Start AND End)) AND Client_ID = ");
         sb.append(appointment.getClientId());
         String sql = String.valueOf(sb);
-        System.out.println("OVERLAP SQL");
-        System.out.println(sql);
+
         Query.queryDb(sql);
         ResultSet apps = Query.getResults();
         appOverlap = apps.next();
